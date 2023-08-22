@@ -57,7 +57,7 @@ const CreatePage = () => {
       ) {
         await createTake.mutateAsync({
           movieId: movie.id,
-          content: movieTake,
+          content: movieTake.trim(),
           title: movie.title,
           genre: selectedGenre,
           status: selectedStatus,
