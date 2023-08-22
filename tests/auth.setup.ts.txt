@@ -1,0 +1,21 @@
+import { test as setup, expect, firefox } from "@playwright/test";
+
+setup("authenticate", async () => {
+  const browser = await firefox.launch({
+    headless: false,
+    args: ["--disable-dev-shm-usage"],
+    ignoreDefaultArgs: ["--disable-component-extensions-with-background-pages"],
+  });
+  const page = await browser.newPage();
+  await page.goto("/");
+  await page.getByRole("button", { name: "Log In" }).click();
+
+  await page.getByLabel("Email or phone").fill("jason.amey@gmail.com");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Enter your password").fill("Gif2u2day!");
+  await page.getByLabel("Enter your password").press("Enter");
+  await page.waitForURL("/");
+  // await expect(page.getByRole("link", { name: "+ Add Take!" })).toBeVisible();
+  // await browser.close();
+  // await page.context().storageState({ path: authFile });
+});

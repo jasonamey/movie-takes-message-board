@@ -1,0 +1,15 @@
+import { test as setup, expect, firefox } from '@playwright/test';
+
+import { STORAGE_STATE } from "playwright.config";
+
+setup('test login', async ({ page }) => {
+
+  // await page.getByRole('button', { name: 'Log In' }).click();
+  // await page.getByLabel('Email or phone').fill('jason.amey@gmail.com');
+  // await page.getByRole('button', { name: 'Next' }).click();
+  // await page.getByLabel('Enter your password').fill('Gif2u2day!');
+  // await page.getByRole('button', { name: 'Next' }).click();
+  // await expect(page.getByRole('link', { name: '+ Add Take'})).toBeVisible()
+
+  await page.context().storageState({path: STORAGE_STATE})
+});
