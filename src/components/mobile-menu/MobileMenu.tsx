@@ -23,7 +23,10 @@ export const MobileMenu = () => {
           focus:outline-none"
       >
         <div className="relative h-full">
-          <div className="absolute right-0 flex h-full w-3/5 animate-enter flex-col items-end gap-4 bg-white-300 px-6 pt-[116px]">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="absolute right-0 flex h-full w-3/5 animate-enter flex-col items-end gap-4 bg-white-300 px-6 pt-[116px]"
+          >
             <StatusBox />
             <TagBox />
             {session && (

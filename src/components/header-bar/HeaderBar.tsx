@@ -24,7 +24,7 @@ export const HeaderBar = () => {
 
   return (
     <>
-      <div className="flex w-full items-center justify-between bg-blue-300 p-2 text-white-100 sm:flex-row sm:rounded-md md:p-4">
+      <div className="flex w-full items-center justify-between bg-blue-300 p-3 text-white-100 sm:flex-row sm:rounded-md md:p-4">
         <div className=" flex w-4/6 items-center gap-4 sm:w-auto">
           <svg
             className="hidden sm:block"
@@ -62,7 +62,7 @@ export const HeaderBar = () => {
             <>
               <Link
                 className={
-                  "sm:text-md order-last cursor-pointer rounded-lg bg-purple px-2 py-1 text-center text-sm font-medium transition-colors active:scale-95 disabled:opacity-50 sm:inline-flex sm:px-4 sm:py-2  md:mr-2 "
+                  "sm:text-md order-last cursor-pointer rounded-lg bg-purple px-2 py-2 text-center text-sm font-medium transition-colors active:scale-95 disabled:opacity-50 sm:inline-flex sm:px-4 sm:py-2  md:mr-2 "
                 }
                 href="/create"
               >
