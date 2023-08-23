@@ -55,6 +55,7 @@ export const takeRouter = createTRPCRouter({
       authorEmail: post.author.email,
       votes: post.votes,
       genre: post.genre,
+      authorId: post.author.id,
     }));
   }),
 
@@ -105,4 +106,14 @@ export const takeRouter = createTRPCRouter({
     });
     return statuses;
   }),
+  delete: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ input: { id }, ctx }) => {
+      const take = await ctx.prisma.take.delete({
+        where: {
+          id,
+        },
+      });
+      return take;
+    }),
 });

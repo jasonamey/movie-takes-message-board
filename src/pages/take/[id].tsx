@@ -58,6 +58,7 @@ const TakeViewPage: NextPage<{ id: string }> = ({ id }) => {
             votes={votes}
             genre={genre}
             authorEmail={author.email}
+            authorId={author.id}
           />
         )}
         {commentsData && (

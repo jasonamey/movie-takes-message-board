@@ -44,6 +44,7 @@ type TakesResponse = {
   id: string;
   content: string;
   authorEmail: string;
+  authorId: string;
   releaseDate: string;
   votes: Vote[];
   genre: string;

@@ -15,6 +15,7 @@ interface MovieHeaderProps {
   votes: Vote[];
   genre: string;
   authorEmail: string;
+  authorId: string;
 }
 
 export const MovieHeader = ({
@@ -26,6 +27,7 @@ export const MovieHeader = ({
   votes,
   genre,
   authorEmail,
+  authorId,
 }: MovieHeaderProps) => {
   const takeResult: TakesResponse = {
     content,
@@ -37,6 +39,7 @@ export const MovieHeader = ({
     votes,
     releaseDate: movie.releaseDate,
     authorEmail,
+    authorId,
   };
   return (
     <Container
