@@ -7,7 +7,7 @@ interface GoBackProps {
 
 export const GoBack = ({ color }: GoBackProps) => {
   return (
-    <div className="flex items-center justify-start gap-4">
+    <div className="mt-4 flex items-center justify-start gap-4 sm:mt-0">
       <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M6 9L2 5l4-4"

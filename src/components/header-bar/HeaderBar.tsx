@@ -62,7 +62,7 @@ export const HeaderBar = () => {
             <>
               <Link
                 className={
-                  "sm:text-md order-last cursor-pointer rounded-lg bg-purple px-4 py-2 text-center text-sm font-medium transition-colors active:scale-95 disabled:opacity-50 sm:inline-flex  md:mr-2 "
+                  "sm:text-md order-last cursor-pointer rounded-lg bg-purple px-2 py-1 text-center text-sm font-medium transition-colors active:scale-95 disabled:opacity-50 sm:inline-flex sm:px-4 sm:py-2  md:mr-2 "
                 }
                 href="/create"
               >

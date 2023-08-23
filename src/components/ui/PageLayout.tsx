@@ -7,7 +7,7 @@ interface PageLayoutProps extends React.HTMLAttributes<HTMLElement> {
 
 export const PageLayout = ({ children, className }: PageLayoutProps) => {
   return (
-    <div className={cn("flex flex-col items-center pb-40 sm:pt-6", className)}>
+    <div className={cn("flex flex-col items-center pb-10 sm:pt-6", className)}>
       {children}
     </div>
   );
