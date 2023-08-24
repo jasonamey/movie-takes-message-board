@@ -35,10 +35,10 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
     });
   };
   return (
-    <li className="grid grid-cols-10 gap-4 border-b-[1px] border-white-300 pb-2 pr-4 pt-4 last:border-none last:pb-0">
+    <li className="xs:gap-x-0 grid grid-cols-12 gap-x-2 gap-y-3 border-b-[1px] border-white-300  pb-4 pt-4 last:border-none">
       {author.name && author.image && (
         <Image
-          className="col-span-2 rounded-full sm:col-span-1 sm:mr-8"
+          className="col-span-2 rounded-full sm:col-span-1 sm:mr-4"
           alt={`icon for ${author.name}`}
           src={author.image}
           width={40}
@@ -63,26 +63,28 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
           {showReplyBox ? "No Reply" : "Reply"}
         </button>
       )}
-      <span className="col-span-10 col-start-1 sm:col-span-8 sm:col-start-2">
+      <span className="col-span-11 col-start-1 leading-5 sm:col-span-9 sm:col-start-2 ">
         {content}
       </span>
       <span className="col-span-6 col-start-1 self-start text-[8px] italic sm:col-start-2">
         {format(new Date(comment.createdAt), "PPpp")}
       </span>
-      {/* {replies && replies.length > 0 && <hr className="border-white-300" />}
+      {/* {replies && replies.length > 0 && (
+        <hr className="col-span-12 col-start-2 border-white-300" />
+      )} */}
       {showReplyBox && (
-        <div className="col-start-2 flex items-start justify-between gap-4">
+        <div className="col-span-10 col-start-1 flex flex-col items-start justify-between gap-2 sm:col-start-2 sm:flex-row">
           <LargeInput largeInput={reply} setLargeInput={setReply} />
           <Button
             variant="submit"
-            className="w-1/5 px-2 text-sm"
+            className="w-[96px] px-2 text-sm"
             onClick={() => void submitHandler()}
           >
             Post Reply
           </Button>
         </div>
-      )} */}
-      {/* {replies && replies?.length > 0 && <ReplyList replies={replies} />} */}
+      )}
+      {replies && replies?.length > 0 && <ReplyList replies={replies} />}
     </li>
   );
 };

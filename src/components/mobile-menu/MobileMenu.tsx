@@ -29,7 +29,7 @@ export const MobileMenu = () => {
           >
             <StatusBox />
             <TagBox />
-            {session && (
+            {session.status === "authenticated" && (
               <Button variant="submit" onClick={() => void signOut()}>
                 Log Out
               </Button>
