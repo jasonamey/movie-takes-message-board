@@ -40,5 +40,3 @@ export const Reply = ({ reply, isLast }: ReplyProps) => {
     </li>
   );
 };
-
-// border-white-300

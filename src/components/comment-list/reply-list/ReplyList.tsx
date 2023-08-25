@@ -8,7 +8,7 @@ interface ReplyListProps {
 
 export const ReplyList = ({ replies }: ReplyListProps) => {
   return (
-    <ul className="col-span-12 col-start-2">
+    <ul className="col-span-11 col-start-2">
       {replies &&
         replies.map((item, idx) => (
           <Reply

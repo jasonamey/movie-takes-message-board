@@ -35,7 +35,7 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
     });
   };
   return (
-    <li className="xs:gap-x-0 grid grid-cols-12 gap-x-2 gap-y-3 border-b-[1px] border-white-300  pb-4 pt-4 last:border-none">
+    <li className="xs:gap-x-0 grid grid-cols-12 gap-x-2 gap-y-3 border-b-[1px] border-white-300 pb-4 pt-4 last:border-none">
       {author.name && author.image && (
         <Image
           className="col-span-2 rounded-full sm:col-span-1 sm:mr-4"
@@ -57,7 +57,7 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
       </div>
       {isLoggedIn && (
         <button
-          className="col-span-1 col-start-10 text-sm text-blue-200 hover:underline"
+          className="col-span-1 col-start-12 text-sm text-blue-200 hover:underline"
           onClick={() => setReplyBox(!showReplyBox)}
         >
           {showReplyBox ? "No Reply" : "Reply"}
@@ -69,9 +69,6 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
       <span className="col-span-6 col-start-1 self-start text-[8px] italic sm:col-start-2">
         {format(new Date(comment.createdAt), "PPpp")}
       </span>
-      {/* {replies && replies.length > 0 && (
-        <hr className="col-span-12 col-start-2 border-white-300" />
-      )} */}
       {showReplyBox && (
         <div className="col-span-10 col-start-1 flex flex-col items-start justify-between gap-2 sm:col-start-2 sm:flex-row">
           <LargeInput largeInput={reply} setLargeInput={setReply} />
