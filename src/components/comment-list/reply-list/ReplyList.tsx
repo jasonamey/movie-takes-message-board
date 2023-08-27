@@ -1,4 +1,3 @@
-import React from "react";
 import { type Reply as ReplyType } from "@/types";
 import { Reply } from "./Reply";
 

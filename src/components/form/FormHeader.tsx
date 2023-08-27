@@ -1,5 +1,3 @@
-import React from "react";
-
 interface FormHeaderProps {
   film?: { title: string; year: string | undefined } | null;
   formHeader: string;

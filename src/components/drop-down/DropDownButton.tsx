@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "@/utils/helpers";
 import { DROPDOWN_STYLES } from "@/utils/constants";
 

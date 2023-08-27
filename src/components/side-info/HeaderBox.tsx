@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import useMobileMenu from "@/hooks/useMobileMenu";
 
 export const HeaderBox = () => {

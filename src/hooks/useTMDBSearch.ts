@@ -1,36 +1,50 @@
 import { useEffect, useState } from "react";
-import axios from "axios"
-import { env } from "@/env.mjs"
-import { type Movie } from 'tmdb-ts';
+import axios from "axios";
+import { env } from "@/env.mjs";
+import { type Movie } from "tmdb-ts";
 import { prepareForSearchQuery } from "@/utils/helpers";
 
-interface Response { 
-  page: number, 
-  results: Movie[], 
-  total_pages: number,
-  total_results: number
+interface Response {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
 }
 
 export const useTMDBSearch = (term: string) => {
-  const [movies, setMovies] = useState<Movie[]>([])
+  const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
-    setMovies([])
+    setMovies([]);
     const getFilms = async () => {
-      const response  = await axios.get<Response>(`${env.NEXT_PUBLIC_TMDB_BASE_URL}${prepareForSearchQuery(term)}&api_key=${env.NEXT_PUBLIC_TMDB_API_KEY}`)       
-        const { data } = response
-      return data
-    }
+      const response = await axios.get<Response>(
+        `${env.NEXT_PUBLIC_TMDB_BASE_URL}${prepareForSearchQuery(
+          term
+        )}&api_key=${env.NEXT_PUBLIC_TMDB_API_KEY}`
+        // {
+        //   headers: {
+        //     "Access-Control-Allow-Origin": "*",
+        //     "Access-Control-Allow-Credentials": true,
+        //   },
+        // }
+      );
+      const { data } = response;
+      return data;
+    };
     if (term) {
-    getFilms()
-      .then(data => {
-        setMovies(data.results)
-      })
-      .catch(err => console.log("Error fetching movies from TMDB", err))
+      getFilms()
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((err) => console.log("Error fetching movies from TMDB", err));
     }
-  },[term])
+  }, [term]);
 
-  return { 
-    movies
-  }
-  
-}
+  return {
+    movies,
+  };
+};
+//header
+
+//setting on library proxy
+
+//access control

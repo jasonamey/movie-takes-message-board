@@ -1,4 +1,3 @@
-import React from "react";
 import { HeaderBox } from "./HeaderBox";
 import { StatusBox } from "./StatusBox";
 import { TagBox } from "./TagBox";

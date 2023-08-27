@@ -1,5 +1,3 @@
-import React from "react";
-
 interface FormLabelProps {
   label: string;
   subLabel: string;

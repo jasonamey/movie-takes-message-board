@@ -1,5 +1,3 @@
-import React from "react";
-
 interface TrashIconProps {
   width: number;
   height: number;

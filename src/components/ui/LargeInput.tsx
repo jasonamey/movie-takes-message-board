@@ -1,5 +1,3 @@
-import React from "react";
-
 interface LargeInputProps {
   largeInput: string;
   setLargeInput: (item: string) => void;

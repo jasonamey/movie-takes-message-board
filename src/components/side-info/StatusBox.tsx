@@ -1,4 +1,3 @@
-import React from "react";
 import { api } from "@/utils/api";
 import { Dot } from "@/components/ui";
 import StatusBoxSkeleton from "./StatusBoxSkeleton";

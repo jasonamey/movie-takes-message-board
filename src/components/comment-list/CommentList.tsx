@@ -1,4 +1,3 @@
-import React from "react";
 import { Comment } from "./Comment";
 import { Container } from "../ui";
 import type { User } from "@prisma/client";

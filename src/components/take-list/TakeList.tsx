@@ -1,4 +1,3 @@
-import React from "react";
 import { Take } from "./Take";
 import { type TakesResponse } from "@/types";
 

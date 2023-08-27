@@ -1,4 +1,3 @@
-import React from "react";
 import { api } from "@/utils/api";
 import { type Vote } from "@prisma/client";
 import { hasVoted } from "@/utils/helpers";

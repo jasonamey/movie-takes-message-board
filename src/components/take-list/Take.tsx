@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { type TakesResponse } from "@/types";
@@ -35,7 +34,6 @@ export const Take = ({ takeResult, headerTake = false }: TakeProps) => {
     genre,
     authorId,
   } = takeResult;
-  console.log("Here is the author id", authorId);
   return (
     <article
       className={`group relative flex ${

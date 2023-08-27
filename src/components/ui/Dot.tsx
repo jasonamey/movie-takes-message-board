@@ -1,5 +1,3 @@
-import React from "react";
-
 interface DotProps {
   color: "BLUE" | "PURPLE" | "ORANGE";
 }

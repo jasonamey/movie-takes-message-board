@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { type Reply as ReplyType } from "@/types";
 import { createUsername } from "@/utils/helpers";

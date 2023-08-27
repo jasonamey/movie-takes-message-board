@@ -1,4 +1,3 @@
-import React from "react";
 import { type Choice } from "@/types";
 
 interface DropDownItemsProps {

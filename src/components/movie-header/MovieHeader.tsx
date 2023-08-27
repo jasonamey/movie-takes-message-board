@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui";
 import { formatRuntime, formatDate } from "@/utils/helpers";

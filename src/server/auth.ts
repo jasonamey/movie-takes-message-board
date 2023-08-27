@@ -5,7 +5,8 @@ import {
   type NextAuthOptions,
   type DefaultSession,
 } from "next-auth";
-import GoogleProvider from 'next-auth/providers/google'
+import GoogleProvider from "next-auth/providers/google";
+import Credentials from "next-auth/providers/credentials";
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/db";
 
@@ -49,25 +50,51 @@ export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
-  ],
-};
+    Credentials({
+      id: "credentials",
+      name: "credentials",
+      credentials: {
+        email: { label: "email", type: "text" },
+        password: { label: "password", type: "text" },
+      },
+      async authorize(credentials) {
+        //low security only for test user in development only
+        if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "development") {
+          throw new Error("unavailable");
+        }
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Email and password required");
+        }
 
-/**
- * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
- *
- * @see https://next-auth.js.org/configuration/nextjs
- */
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email,
+          },
+        });
+        console.log("da user", user);
+        // console.log("da user", user);
+        // if (!user || !user.testPassword) {
+        //   throw new Error("Email does not exist");
+        // }
+
+        // if (user.testPassword !== credentials.password) {
+        //   throw new Error("Incorrect password");
+        // }
+
+        return user;
+      },
+    }),
+  ],
+  session: {
+    strategy: "jwt",
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_JWT_SECRET,
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+};
 export const getServerAuthSession = (ctx: {
   req: GetServerSidePropsContext["req"];
   res: GetServerSidePropsContext["res"];

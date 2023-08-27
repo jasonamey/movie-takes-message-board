@@ -1,4 +1,3 @@
-import React from "react";
 import { type MovieSearched } from "@/types";
 import { cn } from "@/utils/helpers";
 
