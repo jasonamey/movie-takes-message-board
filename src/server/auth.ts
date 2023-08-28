@@ -6,7 +6,6 @@ import {
   type DefaultSession,
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import Credentials from "next-auth/providers/credentials";
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/db";
 
@@ -52,47 +51,7 @@ export const authOptions: NextAuthOptions = {
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
-    Credentials({
-      id: "credentials",
-      name: "credentials",
-      credentials: {
-        email: { label: "email", type: "text" },
-        password: { label: "password", type: "text" },
-      },
-      async authorize(credentials) {
-        //low security only for test user in development only
-        if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "development") {
-          throw new Error("unavailable");
-        }
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error("Email and password required");
-        }
-
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
-        });
-        console.log("da user", user);
-        // console.log("da user", user);
-        // if (!user || !user.testPassword) {
-        //   throw new Error("Email does not exist");
-        // }
-
-        // if (user.testPassword !== credentials.password) {
-        //   throw new Error("Incorrect password");
-        // }
-
-        return user;
-      },
-    }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  jwt: {
-    secret: process.env.NEXTAUTH_JWT_SECRET,
-  },
   secret: process.env.NEXTAUTH_SECRET,
 };
 export const getServerAuthSession = (ctx: {
