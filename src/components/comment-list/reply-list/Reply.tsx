@@ -5,10 +5,11 @@ import { format } from "date-fns";
 
 interface ReplyProps {
   reply: ReplyType;
-  isLast: boolean;
+
+  commentAuthorAt: string;
 }
 
-export const Reply = ({ reply, isLast }: ReplyProps) => {
+export const Reply = ({ reply, commentAuthorAt }: ReplyProps) => {
   const { author, content } = reply;
   return (
     <li className="xs:gap-x-0 group grid grid-cols-11 items-center gap-x-2 gap-y-3 border-white-300 pt-4 first:border-t-[1px]">
@@ -30,6 +31,9 @@ export const Reply = ({ reply, isLast }: ReplyProps) => {
         </p>
       </div>
       <p className="col-span-10 col-start-1 leading-5 sm:col-span-8 sm:col-start-2">
+        <span className="mr-1 text-purple">
+          {createUsername(commentAuthorAt)}
+        </span>
         {content}
       </p>
       <span className="col-span-6 col-start-1 self-start text-[8px] italic sm:col-start-2">

@@ -3,18 +3,15 @@ import { Reply } from "./Reply";
 
 interface ReplyListProps {
   replies: ReplyType[];
+  commentAuthorAt: string;
 }
 
-export const ReplyList = ({ replies }: ReplyListProps) => {
+export const ReplyList = ({ replies, commentAuthorAt }: ReplyListProps) => {
   return (
     <ul className="col-span-11 col-start-2">
       {replies &&
         replies.map((item, idx) => (
-          <Reply
-            key={item.id}
-            reply={item}
-            isLast={idx === replies.length - 1}
-          />
+          <Reply key={item.id} reply={item} commentAuthorAt={commentAuthorAt} />
         ))}
     </ul>
   );

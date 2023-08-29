@@ -81,7 +81,9 @@ export const Comment = ({ comment, isLoggedIn }: CommentProps) => {
           </Button>
         </div>
       )}
-      {replies && replies?.length > 0 && <ReplyList replies={replies} />}
+      {replies && replies?.length > 0 && (
+        <ReplyList replies={replies} commentAuthorAt={author.email} />
+      )}
     </li>
   );
 };
