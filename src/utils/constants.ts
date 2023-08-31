@@ -10,7 +10,7 @@ export const DROPDOWN_STYLES = {
     chevron: "#FFFFFF",
     buttonBackground: "bg-blue-300",
     buttonText: "text-white-100",
-    padding: "",
+    padding: "pr-2",
     margin: "",
   },
 };

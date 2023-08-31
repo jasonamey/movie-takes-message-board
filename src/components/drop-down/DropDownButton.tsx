@@ -24,7 +24,7 @@ export const DropDownButton = ({
         clickHandler();
       }}
       className={cn(
-        `m-0 flex w-full cursor-pointer items-center justify-between gap-2 border-none px-4 ${
+        `m-0 flex w-full cursor-pointer items-center justify-between gap-2 border-none  px-4 ${
           color === "blue" ? "py-0" : "py-4"
         } outline-none sm:p-4`,
         buttonBackground,
@@ -36,7 +36,9 @@ export const DropDownButton = ({
         width="10"
         height="7"
         xmlns="http://www.w3.org/2000/svg"
-        className={`transition-all ${isDropDownViewable ? "rotate-180" : ""}`}
+        className={`transition-all ${
+          isDropDownViewable ? "rotate-180" : ""
+        } mr-2`}
       >
         <path
           d="M1 6l4-4 4 4"
