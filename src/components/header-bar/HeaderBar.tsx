@@ -88,6 +88,15 @@ export const HeaderBar = () => {
               Log In
             </Button>
           )}
+          {process.env.NEXT_PUBLIC_DEVELOPMENT == "true" && (
+            <Button
+              variant="submit"
+              disabled={isLoading}
+              onClick={() => void signIn("github")}
+            >
+              Log In With Github
+            </Button>
+          )}
         </div>
       </div>
     </>
