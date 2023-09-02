@@ -2,7 +2,7 @@
 
 This app serves as a message board for opinions (takes!) about movies. Takes can be upvoted by other users. Takes can be commented-on, and those comments can then be replied-to.
 
-All takes are populated with data about the film from [The Movie Database API]()
+All takes are populated with data about the film from [The Movie Database API](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ## Table of contents
 
