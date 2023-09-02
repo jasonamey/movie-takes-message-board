@@ -1,28 +1,54 @@
-# Create T3 App
+# Movie Takes! App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This app serves as a message board for opinions (takes!) about movies. Takes can be upvoted by other users. Takes can be commented-on, and those comments can then be replied-to.
 
-## What's next? How do I make an app with this?
+All takes are populated with data about the film from [The Movie Database API]()
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Table of contents
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Built with](#built-with)
+- [Author](#author)
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Overview
 
-## Learn More
+### Screenshot
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+Desktop :
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/front-end-mentor%2Fmovie-takes%2Fmovie-takes-1.jpg?alt=media&token=9bebf645-616c-4ac2-bac0-4e4b3b807245" width="650" height="300" style="display:block" />
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+<br/>
 
-## How do I deploy this?
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/front-end-mentor%2Fmovie-takes%2Fmovie-takes-4.jpg?alt=media&token=8d0edee5-3397-450e-8dd1-06298f5865e6" width="300" height="350" style="display:block" />
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+<br/>
+Mobile :
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/front-end-mentor%2Fmovie-takes%2Fmovie-takes-3.jpg?alt=media&token=dcc81923-919f-4b68-80d6-9159349bd3bf" width="300" height="350" style="display:block" />
+
+### Links
+
+- Code URL: [Github](https://github.com/jasonamey/movie-takes-message-board)
+- Live Site URL: [Live Site](https://movie-takes-message-board.vercel.app/)
+
+## Built With
+
+- create-T3
+- NextJs
+- The Movie Database API
+- Typescript
+- TRPC
+- Tailwind
+- Prisma
+- Supabase
+- Next-Auth
+- Google OAuth
+- Playwright
+- Zustand
+- date-fns
+
+## Author
+
+- Portfolio Website - [Jason Amey](https://www.jasonamey.com)

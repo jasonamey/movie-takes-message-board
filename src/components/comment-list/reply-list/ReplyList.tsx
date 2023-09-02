@@ -10,7 +10,7 @@ export const ReplyList = ({ replies, commentAuthorAt }: ReplyListProps) => {
   return (
     <ul className="col-span-11 col-start-2">
       {replies &&
-        replies.map((item, idx) => (
+        replies.map((item) => (
           <Reply key={item.id} reply={item} commentAuthorAt={commentAuthorAt} />
         ))}
     </ul>
